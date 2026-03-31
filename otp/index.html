@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="icon" type="image/png" href="../assets/images/logo.jpeg">
+      <title>OTP Verification | Sekondz</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.1/fonts/remixicon.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accordion@3.0.2/src/accordion.min.css">
+      <link rel="stylesheet" href="../assets/css/style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+      <style>
+         * {
+         margin: 0;
+         padding: 0;
+         }
+         section {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         min-height: 100vh;
+         width: 100%;
+         background: url('https://images.unsplash.com/photo-1674907534695-e82d5b3ec405?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2Nzc2MDczOTQ&ixlib=rb-4.0.3&q=80')no-repeat;
+         background-position: center;
+         background-size: cover;
+         }
+         section:before {
+         content: "";
+         background-color: #0009;
+         width: 100%;
+         height: 100%;
+         position: absolute;
+         top: 0;
+         }
+         .form-box {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         position: relative;
+         width: 400px;
+         height: 450px;
+         background: transparent;
+         border: 2px solid rgba(255, 255, 255, 0.5);
+         border-radius: 20px;
+         backdrop-filter: blur(15px);                
+         }
+         h2 {
+         color: #fff;
+         text-align: center;
+         font-size: 2em;                
+         }
+         .inputbox {
+         position: relative;
+         border-bottom: 2px solid #fff;
+         margin: 30px 0;
+         width: 310px;                
+         }
+         .inputbox label {
+         transform: translateY(-50%);
+         color: #fff;
+         font-size: 1em;
+         pointer-events: none;
+         transition: .5s;
+         position: absolute;
+         top: 50%;
+         left: 5px;                
+         }
+         input:focus~label,
+         input:valid~label {
+         top: -5px;
+         }
+         .inputbox input {
+         background: transparent;
+         border: none;
+         outline: none;
+         font-size: 1em;
+         padding: 0 35px 0 5px;
+         color: #fff;
+         width: 100%;
+         height: 50px;               
+         }
+         .inputbox ion-icon {
+         font-size: 1.2em;
+         position: absolute;
+         right: 8px;
+         color: #fff;                
+         top: 20px;
+         }
+         .forget {
+         color: #fff;
+         display: flex;
+         justify-content: space-between;
+         margin: -15px 0 15px;
+         font-size: .9em;                
+         }
+         .forget label {
+         color: #fff;
+         }
+         .forget label input {
+         margin-right: 3px;
+         }
+         .forget label a,
+         .forget a {
+         color: #fff;
+         text-decoration: none;
+         }
+         .forget label a:hover {
+         text-decoration: underline;
+         }
+         button {
+         width: 100%;
+         height: 40px;
+         border-radius: 40px;
+         background: #fff;
+         border: none;
+         outline: none;
+         cursor: pointer;
+         font-size: 1em;
+         font-weight: 600;
+         }
+         .register {
+         font-size: .9em;
+         color: #fff;
+         text-align: center;
+         margin: 25px 0 10px;
+         }
+         .register p a {
+         text-decoration: none;
+         color: #fff;
+         font-weight: 600;
+         }
+         .register p a:hover {
+         text-decoration: underline;
+         }
+         
+         .otp-field {
+  flex-direction: row;
+  column-gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.otp-field input {
+  height: 45px;
+  width: 42px;
+  border-radius: 6px;
+  outline: none;
+  font-size: 1.125rem;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+.otp-field input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.otp-field input::-webkit-inner-spin-button,
+.otp-field input::-webkit-outer-spin-button {
+  display: none;
+}
+
+.resend {
+  font-size: 12px;
+}
+      </style>
+   </head>
+   <body>
+      <!-- ***** Preloader Start ***** -->
+      <div id="js-preloader" class="js-preloader">
+         <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+               <span></span>
+               <span></span>
+               <span></span>
+            </div>
+         </div>
+      </div>
+      <!-- ***** Preloader End ***** -->
+      <!-- ***** Header Area Start ***** -->
+      <header class="header-area header-sticky">
+         <div class="container">
+            <div class="row">
+               <div class="col-12">
+                  <nav class="main-nav">
+                     <!-- ***** Logo Start ***** -->
+                     <a href="../index.html" class="logo">SEKONDZ</a>
+                     <!-- ***** Logo End ***** -->
+                     <!-- ***** Menu Start ***** -->
+                     <ul class="nav">
+                        <li><a href="../index.html"><i class="bx bx-home"></i> Home</a></li>
+                        <li><a href="../registration/index.html"><i class="far fa-clipboard"></i> Register</a></li>
+                        <li><a href="../login/index.html" class="active" style="border-bottom: 2px solid black;"><i class="fas fa-lock"></i> Login</a></li>
+                     </ul>
+                     <a class='menu-trigger'>
+                     <span>Menu</span>
+                     </a>
+                     <!-- ***** Menu End ***** -->
+                  </nav>
+               </div>
+            </div>
+         </div>
+      </header>
+      <!-- ***** Header Area End ***** -->
+      <section>
+      <div class="col-12 col-md-6 col-lg-4" style="min-width: 500px;">
+        <div class="card bg-white mb-5 mt-5 border-0" style="box-shadow: 0 12px 15px rgba(0, 0, 0, 0.02);">
+          <div class="card-body p-5 text-center">
+            <h4>Verify</h4>
+            <p>Your code was sent to you via email</p>
+
+            <div class="otp-field mb-4">
+              <input type="number" />
+              <input type="number" disabled />
+              <input type="number" disabled />
+              <input type="number" disabled />
+              <input type="number" disabled />
+              <input type="number" disabled />
+            </div>
+
+            <button class="btn btn-primary mb-3">
+              Verify
+            </button>
+
+            <p class="resend text-muted mb-0">
+              Didn't receive code? <a href="">Request again</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      </section>
+      <!-- ***** Footer Start ***** -->
+      <div class="container">
+         <footer class="py-5">
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+               <p>&copy; 2026 <a href="https://www.sekondz.com/">sekondz.com</a>, <span><a href="../terms.html" style="color: grey;">Terms and Conditions</a> apply</span></p>
+               <ul class="list-unstyled d-flex">
+                  <li class="ms-3 m-2"><a class="link-body-emphasis" href="#" aria-label="Phone" style="font-size: 24px;"><i class="fa-solid fa-phone"></i></a></li>
+                  <li class="ms-3 m-2"><a class="link-body-emphasis" href="#" aria-label="Whatsapp" style="font-size: 24px;"><i class="fa-brands fa-whatsapp"></i></a></li>
+                  <li class="ms-3 m-2"><a class="link-body-emphasis" href="#" aria-label="Email" style="font-size: 24px;"><i class="fa-regular fa-envelope"></i></a></li>
+                  <li class="ms-3 m-2"><a class="link-body-emphasis" href="#" aria-label="Instagram" style="font-size: 24px;"><i class="fa-brands fa-instagram"></i></a></li>
+                  <li class="ms-3 m-2"><a class="link-body-emphasis" href="#" aria-label="Facebook" style="font-size: 24px;"><i class="fa-brands fa-facebook"></i></a></li>
+                  <li class="ms-3 m-2"><a class="link-body-emphasis" href="#" aria-label="TikTok" style="font-size: 24px;"><i class="fa-brands fa-tiktok"></i></a></li>
+                  <li class="ms-3 m-2"><a class="link-body-emphasis" href="#" aria-label="Twitter-X" style="font-size: 24px;"><i class="ri-twitter-x-line"></i></a></li>
+                  <li class="ms-3 m-2"><a class="link-body-emphasis" href="#" aria-label="Linkedin" style="font-size: 24px;"><i class="ri-linkedin-box-fill"></i></a></li>
+               </ul>
+            </div>
+         </footer>
+      </div>
+      <!-- ***** Footer End ***** -->
+      <!-- jQuery -->
+      <script src="../assets/js/jquery-2.1.0.min.js"></script>
+      <!-- Bootstrap -->
+      <script src="../assets/js/popper.js"></script>
+      <script src="../assets/js/bootstrap.min.js"></script>
+      <script src="../assets/boxicons-master/dist/boxicons.js"></script>
+      <!-- Plugins -->
+      <script src="../assets/js/scrollreveal.min.js"></script>
+      <script src="../assets/js/waypoints.min.js"></script>
+      <script src="../assets/js/jquery.counterup.min.js"></script>
+      <script src="../assets/js/imgfix.min.js"></script> 
+      <script src="../assets/js/mixitup.js"></script> 
+      <script src="../assets/js/accordions.js"></script>
+      <!-- Global Init -->
+      <script src="../assets/js/customt1.js"></script>
+      <script src="./script.js"></script>
+   </body>
+</html>
