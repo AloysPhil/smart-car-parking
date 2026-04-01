@@ -21,7 +21,7 @@ String.prototype.replaceAt = function(index, replacement) {
 
     var phone = mobile.replaceAt(0, "254");
 
-    console.log("phone");
+    console.log(phone);
 
     // Ajax config
  //   $.ajax({
