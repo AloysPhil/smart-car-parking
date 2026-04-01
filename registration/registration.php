@@ -1,5 +1,7 @@
 <?php
 
+header("Content-Type: application/json");
+
 $phoneNumber = $_POST['phoneNumber'];
 $licenseNumber = $_POST['licenseNumber'];
 $plateNumber = $_POST['plateNumber'];
