@@ -12,7 +12,7 @@ function registrationForm() {
     var mobile = $("#phoneNumber").value;
     var phone = mobile.replaceAt(0, "254");
 
-    console.log(phone);
+    console.log("123");
 
     // Ajax config
  //   $.ajax({
