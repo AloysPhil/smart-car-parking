@@ -24,7 +24,11 @@ function registrationForm() {
 
  //       },
 //        success: function(response) { //once the request successfully process to the server side it will return result here
-//            $this.attr('disabled', false).html($caption);
+            
+     //                                                    setTimeout(function() {
+     //                                                        $this.attr('disabled', false).html($caption);
+
+      //                                                  }, 3000);
             
           //  alert(response);
           
