@@ -9,8 +9,8 @@ function registrationForm() {
     var formData = $(form).serialize(); //serialize the form into array
     var route = $(form).attr('action'); //get the route using attribute action
     
-  //  var mobile = $("#phoneNumber").value;
-  //  var phone = mobile.replaceAt(0, "254");
+    var mobile = $("#phoneNumber").value;
+    var phone = mobile.replaceAt(0, "254");
 
     console.log(phone);
 
