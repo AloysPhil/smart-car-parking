@@ -16,9 +16,11 @@ function registrationForm() {
     return str.substring(0,index) + chr + str.substring(index+1);
     }
 
-    var phone = setCharAt(mobile, 0, "254");
+    var phoneNumber = setCharAt(mobile, 0, "254");
+    var plateNumber = $("#plateNumber").val();
+    var licenseNumber = $("#licenseNumber").val();
 
-    console.log(phone);
+    console.log(phoneNumber + " " + plateNumber + " " + licenseNumber);
 
     // Ajax config
  //   $.ajax({
