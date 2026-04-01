@@ -9,6 +9,8 @@ function registrationForm() {
         var formData = $(form).serialize(); //serialize the form into array
         var route = $(form).attr('action'); //get the route using attribute action
 
+        $this.attr('disabled', true).html("Processing...");
+
         var mobile = $("#phoneNumber").val();
 
         function setCharAt(str, index, chr) {
@@ -22,31 +24,31 @@ function registrationForm() {
 
         console.log(phoneNumber + " " + plateNumber + " " + licenseNumber);
 
-        // Ajax config
-        $.ajax({
-            type: "POST", //we are using POST method to submit the data to the server side
-            url: route, // get the route value
-            data: formData, // our serialized array data for server side
-            beforeSend: function() { //We add this before send to disable the button once we submit it so that we prevent the multiple click
-                $this.attr('disabled', true).html("Processing...");
+        function saveJsonObjToFile() {
+        const saveObj = { "a": 3 }; // tmp
+    
+        // file setting
+        const text = JSON.stringify(saveObj);
+        const name = "sample.json";
+        const type = "text/plain";
+    
+        // create file
+        const a = document.createElement("a");
+        const file = new Blob([text], { type: type });
+        a.href = URL.createObjectURL(file);
+        a.download = name;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        }
 
-            },
-            success: function(response) { //once the request successfully process to the server side it will return result here
+        saveJsonObjToFile();
 
-                setTimeout(function() {
-                    $this.attr('disabled', false).html($caption);
+        setTimeout(function() {
+        $this.attr('disabled', false).html($caption);
 
-                }, 3000);
+        }, 3000);
 
-                alert(response);
-
-                //  window.location.href = 'https://sekondz.com/user/auth-2.html?mobile=' + response;
-
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                // You can put something here if there is an error from submitted request
-            }
-        });
 
     });
 }
