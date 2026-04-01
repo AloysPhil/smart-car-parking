@@ -3,50 +3,50 @@
 function registrationForm() {
     $("#registration_button").on("click", function() {
 
-    var $this = $("#registration_button"); //submit button selector using ID
-    var $caption = $this.html(); // We store the html content of the submit button
-    var form = "#registration_form"; //defined the #form ID
-    var formData = $(form).serialize(); //serialize the form into array
-    var route = $(form).attr('action'); //get the route using attribute action
-    
-    var mobile = $("#phoneNumber").val();
+        var $this = $("#registration_button"); //submit button selector using ID
+        var $caption = $this.html(); // We store the html content of the submit button
+        var form = "#registration_form"; //defined the #form ID
+        var formData = $(form).serialize(); //serialize the form into array
+        var route = $(form).attr('action'); //get the route using attribute action
 
-    function setCharAt(str,index,chr) {
-    if(index > str.length-1) return str;
-    return str.substring(0,index) + chr + str.substring(index+1);
-    }
+        var mobile = $("#phoneNumber").val();
 
-    var phoneNumber = setCharAt(mobile, 0, "254");
-    var plateNumber = $("#plateNumber").val();
-    var licenseNumber = $("#licenseNumber").val();
+        function setCharAt(str, index, chr) {
+            if (index > str.length - 1) return str;
+            return str.substring(0, index) + chr + str.substring(index + 1);
+        }
 
-    console.log(phoneNumber + " " + plateNumber + " " + licenseNumber);
+        var phoneNumber = setCharAt(mobile, 0, "254");
+        var plateNumber = $("#plateNumber").val();
+        var licenseNumber = $("#licenseNumber").val();
 
-    // Ajax config
- //   $.ajax({
- //      type: "POST", //we are using POST method to submit the data to the server side
-//        url: route, // get the route value
-//        data: formData, // our serialized array data for server side
- //       beforeSend: function() { //We add this before send to disable the button once we submit it so that we prevent the multiple click
-//            $this.attr('disabled', true).html("Processing...");
+        console.log(phoneNumber + " " + plateNumber + " " + licenseNumber);
 
- //       },
-//        success: function(response) { //once the request successfully process to the server side it will return result here
-            
-     //                                                    setTimeout(function() {
-     //                                                        $this.attr('disabled', false).html($caption);
+        // Ajax config
+        $.ajax({
+            type: "POST", //we are using POST method to submit the data to the server side
+            url: route, // get the route value
+            data: formData, // our serialized array data for server side
+            beforeSend: function() { //We add this before send to disable the button once we submit it so that we prevent the multiple click
+                $this.attr('disabled', true).html("Processing...");
 
-      //                                                  }, 3000);
-            
-          //  alert(response);
-          
- //         window.location.href = 'https://sekondz.com/user/auth-2.html?mobile=' + response;
+            },
+            success: function(response) { //once the request successfully process to the server side it will return result here
 
-//        },
-  //      error: function(XMLHttpRequest, textStatus, errorThrown) {
-            // You can put something here if there is an error from submitted request
-  //      }
- //   });
+                setTimeout(function() {
+                    $this.attr('disabled', false).html($caption);
+
+                }, 3000);
+
+                alert(response);
+
+                //  window.location.href = 'https://sekondz.com/user/auth-2.html?mobile=' + response;
+
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                // You can put something here if there is an error from submitted request
+            }
+        });
 
     });
 }
