@@ -182,25 +182,25 @@
       <section>
          <div class="form-box">
             <div class="form-value">
-               <form action="">
+               <form id = "registration_form" action="registration.php">
                   <h2>Register</h2>
                   <div class="inputbox">
                      <ion-icon name="mail-outline"></ion-icon>
-                     <input type="text" required>
+                     <input type="text" name="licenseNumber" id="licenseNumber" required>
                      <label for="">Driving License Number</label>
                   </div>
                   <div class="inputbox">
                      <ion-icon name="mail-outline"></ion-icon>
-                     <input type="text" required>
+                     <input type="text" name="plateNumber" id="plateNumber" required>
                      <label for="">Vehicle Number Plate</label>
                   </div>
                   <div class="inputbox">
                      <ion-icon name="lock-closed-outline"></ion-icon>
-                     <input type="password" required>
+                     <input type="text" name="phoneNumber" id="phoneNumber" required>
                      <label for="">Mobile Phone Number</label>
                   </div>
 
-                  <button>Submit</button>
+                  <button type="button" id = "registration_button">Submit</button>
                   <div class="register">
                      <p>Don't have a account <a href="../login/index.html">Login</a></p>
                   </div>
@@ -236,5 +236,6 @@
       <script src="../assets/js/scrollreveal.min.js"></script>
       <!-- Global Init -->
       <script src="../assets/js/customt1.js"></script>
+      <script src="./script.js"></script>
    </body>
 </html>
