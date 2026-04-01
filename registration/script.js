@@ -11,16 +11,12 @@ function registrationForm() {
     
     var mobile = $("#phoneNumber").val();
 
-// Source - https://stackoverflow.com/a/1431113
-// Posted by Cem Kalyoncu, modified by community. See post 'Timeline' for change history
-// Retrieved 2026-04-01, License - CC BY-SA 4.0
+    function setCharAt(str,index,chr) {
+    if(index > str.length-1) return str;
+    return str.substring(0,index) + chr + str.substring(index+1);
+    }
 
-String.prototype.replaceAt = function(index, replacement) {
-    return this.substring(0, index) + replacement + this.substring(index + replacement.length);
-}
-
-
-    var phone = mobile.replaceAt(0, "254");
+    var phone = setCharAt(mobile, 0, "254");
 
     console.log(phone);
 
