@@ -15,6 +15,6 @@ $logFile = "./users.json";
 $log = fopen($logFile, "w");
 fwrite($log, $userJSON);
 fclose($log);
-
+echo "success";
 
 ?>
