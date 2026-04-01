@@ -4,27 +4,27 @@ function registrationForm() {
     $("#registration_button").on("click", function() {
 
         const users = {
-                       254712345001 : {
+                                        {
                 phone : "254712345001",
                 plate : "KDM 003Y",
                 license : "PAUL123"
             },
-                        254712345002 : {
+                                        {
                 phone : "254712345002",
                 plate : "KDP 548N",
                 license : "PETER123"
             },
-                        254712345003 : {
+                                        {
                 phone : "254712345003",
                 plate : "KAZ 611A",
                 license : "MARY123"
             },
-                        254712345004 : {
+                                        {
                 phone : "254712345004",
                 plate : "KBQ 327T",
                 license : "NELLY123"
             },
-                        254712345678 : {
+                                        {
                 phone : "254712345678",
                 plate : "KAA 123A",
                 license : "JOHN123"
@@ -59,7 +59,24 @@ function registrationForm() {
           license: licenseNumber
         };
 
-        localStorage.setItem(phoneNumber, JSON.stringify(userObj));
+        var available = false;
+
+        for (let i = 0; i < users.length ; i++) {
+            
+            if(users[i].phone == phoneNumber ){
+
+                available = true;
+            }
+            
+        }
+
+        if(available === true){
+
+            alert("User already exists!");
+        }else{
+
+            localStorage.setItem(phoneNumber, JSON.stringify(userObj));
+        }
 
      //   let newObject = localStorage.getItem(phoneNumber);
      //  console.log(JSON.parse(newObject));
