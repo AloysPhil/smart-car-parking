@@ -15,7 +15,7 @@ function registrationForm() {
 // Posted by Cem Kalyoncu, modified by community. See post 'Timeline' for change history
 // Retrieved 2026-04-01, License - CC BY-SA 4.0
 
-String.prototype.replaceAt = function(index, replacement) {
+    var replaceAt = function(index, replacement) {
     return this.substring(0, index) + replacement + this.substring(index + replacement.length);
 }
 
