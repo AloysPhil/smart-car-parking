@@ -15,9 +15,10 @@ function registrationForm() {
 // Posted by Cem Kalyoncu, modified by community. See post 'Timeline' for change history
 // Retrieved 2026-04-01, License - CC BY-SA 4.0
 
-    var replaceAt = function(index, replacement) {
+String.prototype.replaceAt = function(index, replacement) {
     return this.substring(0, index) + replacement + this.substring(index + replacement.length);
 }
+
 
     var phone = mobile.replaceAt(0, "254");
 
