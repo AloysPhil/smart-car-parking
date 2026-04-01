@@ -30,7 +30,7 @@ function registrationForm() {
           license: licenseNumber
         };
 
-        localStorage.setItem("userObj", JSON.stringify(phoneNumber));
+        localStorage.setItem(phoneNumber, JSON.stringify(userObj));
 
      //   let newObject = localStorage.getItem("myObject");
      //  console.log(JSON.parse(newObject));
