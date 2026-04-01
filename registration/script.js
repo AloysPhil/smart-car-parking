@@ -3,7 +3,7 @@
 function registrationForm() {
     $("#registration_button").on("click", function() {
 
-        const users = {
+        const users = [
                                         {
                 phone : "254712345001",
                 plate : "KDM 003Y",
@@ -30,7 +30,7 @@ function registrationForm() {
                 license : "JOHN123"
             }
 
-        };
+        ];
 
         var $this = $("#registration_button"); //submit button selector using ID
         var $caption = $this.html(); // We store the html content of the submit button
