@@ -10,9 +10,9 @@ function registrationForm() {
     var route = $(form).attr('action'); //get the route using attribute action
     
     var mobile = $("#phoneNumber").value;
-    var phone = mobile.replaceAt(0, "254");
+  //  var phone = mobile.replaceAt(0, "254");
 
-    console.log("123");
+    console.log(mobile);
 
     // Ajax config
  //   $.ajax({
