@@ -24,7 +24,16 @@ function registrationForm() {
 
         console.log(phoneNumber + " " + plateNumber + " " + licenseNumber);
 
-        localStorage.setItem("lastname", "Smith");
+        const userObj = {
+          phone: phoneNumber,
+          plate: plateNumber,
+          license: licenseNumber
+        };
+
+        localStorage.setItem("userObj", JSON.stringify(phoneNumber));
+
+     //   let newObject = localStorage.getItem("myObject");
+     //  console.log(JSON.parse(newObject));
 
         setTimeout(function() {
         $this.attr('disabled', false).html($caption);
