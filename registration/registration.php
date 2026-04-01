@@ -4,10 +4,15 @@ $phoneNumber = $_POST['phoneNumber'];
 $licenseNumber = $_POST['licenseNumber'];
 $plateNumber = $_POST['plateNumber'];
 
-$stkCallbackResponse = file_get_contents("php://input");
-$logFile = "./mpesa_stk_response.json";
-$log = fopen($logFile, "a");
-fwrite($log, $stkCallbackResponse);
+$text = <<<_END
+Line 1
+Line 2
+Line 3
+_END;
+
+$logFile = "./users.json";
+$log = fopen($logFile, "w");
+fwrite($log, $text);
 fclose($log);
 
 
