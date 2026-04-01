@@ -32,7 +32,7 @@ function registrationForm() {
 
         localStorage.setItem(phoneNumber, JSON.stringify(userObj));
 
-     //   let newObject = localStorage.getItem("myObject");
+     //   let newObject = localStorage.getItem(phoneNumber);
      //  console.log(JSON.parse(newObject));
 
         setTimeout(function() {
