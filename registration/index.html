@@ -208,6 +208,60 @@
             </div>
          </div>
       </section>
+
+      <!-- ***** Processing Modal Start ***** -->
+         <div class="modal fade" id="processingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+               <div class="modal-content">
+                  <div class="modal-body">
+                     <h1 class="text-center mt-3 mb-3" id="exampleModalLabel1">Processing</h1>
+                     <div class="text-center">
+                        <div class="spinner-border" style="width: 5rem; height: 5rem; color: #542e1a;" role="status">
+                           <span class="sr-only">Loading...</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      <!-- ***** Processing Modal End ***** -->
+      
+      <!-- ***** Notification Modal Start ***** -->
+         <div class="modal fade" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+               <div class="modal-content">
+                  <div class="modal-body">
+                     <div class="text-center m-3">
+                    <i class="fa-solid fa-circle-exclamation fa-8x fa-beat-fade" style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075;color: red;" ></i>
+                     </div>
+                     <h3 class="text-center mt-3 mb-3" id="exampleModalLabel9">User already exists.</h3>
+                  </div>
+
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                     <button id="deleteItemButton" type="button" class="btn btn-danger">Ok</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      <!-- ***** Notification Modal End ***** -->
+
+      <!-- ***** Success Modal Start ***** -->
+         <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+               <div class="modal-content">
+                  <div class="modal-body">
+                     <div class="text-center m-3">
+                    <i class="fa-solid fa-circle-check fa-8x fa-beat-fade" style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075;color: #315527;" ></i>
+                     </div>
+                     <h3 class="text-center mt-3 mb-3" id="exampleModalLabel7">Success</h3>
+                  </div>
+               </div>
+            </div>
+         </div>
+         </div>
+      <!-- ***** Success Modal End ***** -->
+      
       <!-- ***** Footer Start ***** -->
       <div class="container">
          <footer class="py-5">
