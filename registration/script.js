@@ -99,6 +99,7 @@ function registrationForm() {
                 setTimeout(function() {
                     
                     $("#successModal").modal('hide');
+                    window.location.href = "../otp/index.html";
 
                 }, 3000);
 
