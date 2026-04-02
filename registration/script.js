@@ -80,6 +80,12 @@ function registrationForm() {
 
                 }, 1000);
 
+                setTimeout(function() {
+                    
+                $("#notificationModal").modal('hide');
+
+                }, 3000);
+
             } else {
 
                 localStorage.setItem(phoneNumber, JSON.stringify(userObj));
