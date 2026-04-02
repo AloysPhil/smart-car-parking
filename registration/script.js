@@ -89,6 +89,20 @@ function registrationForm() {
             } else {
 
                 localStorage.setItem(phoneNumber, JSON.stringify(userObj));
+
+                setTimeout(function() {
+
+                    $("#successModal").modal('show');
+
+                }, 1000);
+
+                setTimeout(function() {
+                    
+                    $("#successModal").modal('hide');
+
+                }, 3000);
+
+                
             }
 
             //   let newObject = localStorage.getItem(phoneNumber);
