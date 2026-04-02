@@ -90,7 +90,7 @@ function registrationForm() {
 
             setTimeout(function() {
                 $this.attr('disabled', false).html($caption);
-            //    $("#processingModal").modal('hide');
+                $("#processingModal").modal('hide');
 
             }, 3000);
 
